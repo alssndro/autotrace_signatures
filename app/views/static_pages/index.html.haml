@@ -1,0 +1,25 @@
+.row
+  .small-12.columns
+    %h2 Signature Admin
+
+.row
+  .small-12.columns
+    %ul.button-group.even-2.signature-menu
+      %li
+        = link_to "Draw", new_drawn_signature_path
+      %li
+        = link_to "Upload", new_traced_signature_path
+
+.row
+  .small-6.columns.signature-list
+    %h4 My Drawn Signatures
+    %ul
+      - @drawn_signatures.each do |signature|
+        %li
+          = link_to signature.name, signature
+  .small-6.columns.signature-list
+    %h4 My Traced Signatures
+    %ul
+      - @traced_signatures.each do |signature|
+        %li
+          = link_to signature.name, signature

@@ -1,0 +1,2 @@
+module DrawnSignatureHelper
+end

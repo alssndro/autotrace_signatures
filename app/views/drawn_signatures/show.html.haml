@@ -1,0 +1,11 @@
+%h2
+  = @signature.name
+#signature-display
+
+:javascript
+  $(function() {
+    var datapair = JSON.parse('#{@signature.signature}');
+    var signatureImage = new Image();
+    signatureImage.src = "data:" + datapair[0] + "," + datapair[1]
+    $(signatureImage).appendTo($("#signature-display"));
+  });
