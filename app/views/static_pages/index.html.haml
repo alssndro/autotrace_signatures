@@ -3,23 +3,24 @@
     %h2 Signature Admin
 
 .row
-  .small-12.columns
-    %ul.button-group.even-2.signature-menu
-      %li
-        = link_to "Draw", new_drawn_signature_path
-      %li
-        = link_to "Upload", new_traced_signature_path
-
-.row
-  .small-6.columns.signature-list
+  .small-6.columns
+    = link_to "Draw", new_drawn_signature_path, class: "button expand"
     %h4 My Drawn Signatures
-    %ul
-      - @drawn_signatures.each do |signature|
-        %li
-          = link_to signature.name, signature
-  .small-6.columns.signature-list
+    - if !@drawn_signatures.empty?
+      %ul.signature-list
+        - @drawn_signatures.each do |signature|
+          %li
+            = link_to signature.name, signature
+    - else
+      %p No drawn signatures yet
+
+  .small-6.columns
+    = link_to "Upload", new_traced_signature_path, class: "button expand"
     %h4 My Traced Signatures
-    %ul
-      - @traced_signatures.each do |signature|
-        %li
-          = link_to signature.name, signature
+    - if !@traced_signatures.empty?
+      %ul.signature-list
+        - @traced_signatures.each do |signature|
+          %li
+            = link_to signature.name, signature
+    - else
+      %p No traced signatures yet

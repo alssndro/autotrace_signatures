@@ -13,12 +13,47 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-
  */
 
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+body {
+  padding: 40px 0 0 0;
+}
+
+h1, h2, h3, h4 {
+  text-align: center;
+}
+
+#home-button {
+  position: absolute;
+  background-color: #3a343a;
+  color: white;
+  text-align: center;
+  top: 0;
+  left: 0;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  font-size: 10px;
+}
+
+.signature-list {
+  text-align: center;
+}
+
+#signature {
+  border: 6px solid #de00a5;
+  margin: 0 0 20px 0;
 }
 
 #save-signature {
@@ -30,15 +65,6 @@
   margin: 0 auto;
 }
 
-.signature-list {
+p {
   text-align: center;
-  margin: 80px 0;
-}
-
-ul, ol {
-  list-style: none;
-}
-
-body {
-  padding: 40px 0 0 0;
 }

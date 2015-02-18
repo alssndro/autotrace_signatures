@@ -4,11 +4,10 @@ class DrawnSignaturesController < ApplicationController
   end
 
   def create
-    puts "PARAMETERS", params
     @signature = DrawnSignature.new(signature_params)
 
     if @signature.save
-      redirect_to root_path
+      redirect_to @signature
     else
       render action: 'new'
     end

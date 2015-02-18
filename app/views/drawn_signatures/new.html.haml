@@ -1,8 +1,9 @@
 %h2 Create a new signature
-%p Draw your signature in the box below:
 
 = form_for(@drawn_signature) do |f|
+  = f.label :full_name
   = f.text_field :name, placeholder: 'Full Name', autocapitalize: 'words'
+  %p Draw your signature in the box below:
   #signature
   = f.hidden_field :signature
   %ul.button-group.even-2
@@ -11,6 +12,3 @@
     %li
       %a{href: "#", id: "clear-signature", class: "button"}
         Clear signature
-
-
-

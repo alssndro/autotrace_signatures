@@ -1,2 +1,8 @@
-%h1 TracedSignature#new
-%p Find me in app/views/traced_signature/new.html.haml
+%h2 Create a new signature
+%p Upload your signature form below:
+
+= form_for @traced_signature, :html => {:multipart => true} do |f|
+    = f.label :full_name
+    = f.text_field :name, placeholder: 'Full Name', autocapitalize: 'words'
+    = f.file_field :source_image
+    = f.submit value: "Submit", class: "button"
