@@ -71,7 +71,7 @@ class SourceImageUploader < CarrierWave::Uploader::Base
     dir = File.dirname(current_path)
     tmp_file_path = File.join(dir, 'tmp')
     FileUtils.mv(current_path, tmp_file_path)
-    system("potrace -s --tight #{tmp_file_path} -o #{current_path}")
+    system("potrace -s -t 20 --tight #{tmp_file_path} -o #{current_path}")
     FileUtils.remove(tmp_file_path)
   end
 end
